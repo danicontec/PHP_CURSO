@@ -9,7 +9,7 @@
 <body>
     <?php
         $db_host = "localhost";
-        $db_name = "usuarios";
+        $db_name = "ods_db";
         $db_user = "root";
         $db_pass = '';
 
@@ -25,7 +25,7 @@
 
         //Esta sentencia evita errores de caracteres
         mysqli_set_charset($str_connect, "UTF-8");
-        $query = "SELECT * FROM DATOS_USUARIO";
+        $query = "SELECT * FROM HOJA1";
         mysqli_set_charset($str_connect, "UTF-8");
         $result = mysqli_query($str_connect, $query);
        
