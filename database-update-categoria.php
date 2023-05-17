@@ -69,7 +69,8 @@
                     echo "Se ha modificado el registro";
                     }
                     else if(mysqli_affected_rows($str_connect)>1){
-                        echo "Se han modificado los registros";
+                        echo "Se han modificado " . 
+                        mysqli_affected_rows($str_connect) . " registros";
                     }
                 }
             }

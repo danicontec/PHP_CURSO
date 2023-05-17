@@ -29,7 +29,7 @@
     for($i= 0; $i<sizeof($meses);$i++){
     echo " ".$meses[$i];
     }
-
+    var_dump($meses);
     //Otra forma de definir un array es por clave/valor o asociativo.
     $persona = array("nombre"=>"Daniel", "apellido"=>"martel");
 
@@ -45,6 +45,11 @@
     //Si se le da un valor diferente a la variable del array asociativo se modifica con el nuevo valor que se añade.
     $persona = "Juan Valdes";
     echo $persona;
+
+    //El array tambien se puede definir de esta manera, y pondra claves numericos autogeneradas.
+    //Este array se comportara como uno generado con corchetes []
+    $names = array("cod","secc","price","date","imp","country");
+    var_dump($names);
     ?>
 
 
