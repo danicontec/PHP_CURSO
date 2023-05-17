@@ -9,12 +9,13 @@
         h2{
             text-align: center;
         }
-
+        
         form{
             margin: auto;
             border: 2px solid gray;
             background-color: purple;
             width: 300px;
+            color: cyan;
         }
 
         form :nth-last-child(1){
@@ -27,7 +28,6 @@
             width: 180px;
             margin: auto;
             text-align: center;
-            color: cyan;
         }
     </style>
 </head>
