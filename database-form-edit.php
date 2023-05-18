@@ -28,50 +28,35 @@
             else {
                 mysqli_select_db($str_connect, "ods_db") or die("No se ha encontrado la BBDD.");
             }
-            echo "<form method='POST'><table><tr><th>Codigo Articulo</th><th>Seccion</th>
-            <th>Nombre_articulo</th><th>Precio</th><th>Fecha</th><th>Importado
-            </th><th>Pais Origen</th><th>Actualizar</th></tr>";
+            
             
             $names = array("cod","secc","name","price","date","imp","country");
             $query = "SELECT * FROM HOJA1 WHERE CODIGO_ARTICULO ='$data'";
             $result = mysqli_query($str_connect, $query);
-            
+            if(mysqli_affected_rows($str_connect)>0){
+                echo "<form method='POST' action='database-edit-data.php'><table><tr><th>Codigo Articulo</th><th>Seccion</th>
+            <th>Nombre_articulo</th><th>Precio</th><th>Fecha</th><th>Importado
+            </th><th>Pais Origen</th><th>Actualizar</th></tr>";
+            }
+            else{
+                echo "No se encuentra el codigo de articulo, pruebe con otro";
+            }
             while ($row = mysqli_fetch_row($result)){
             for($i = 0; $i < sizeof($row); $i++){
               
                 echo "<td><input type='text' value='$row[$i]' name='$names[$i]'/></td>";
 
             }
-            echo "<td><button onclick ='updateMe()' name='update'>Actualizar</button></td>";
+            echo "<td><input type='submit' name='update' value='actualizar'></td>";
 
             }
             echo "</table></form>";
                        
         }
-        //TODO: Implementar funcionalidad editable una vez recogidos los datos de la tabla
-        function updateMe(){
-            if(isset($_POST["update"])){
-                $data1 = $_POST["cod"];
-                $sec1 = $_POST["secc"];
-                $name1 = $_POST["name"];
-                $price1 = $_POST["price"];
-                $date1 = $_POST["date"];
-                $import1 = $_POST["imp"];
-                $country1 = $_POST["country"];
 
-                $query2 ="UPDATE HOJA1 SET CODIGO_ARTICULO = '$data1', SECCION = '$sec1'
-                , NOMBRE_ARTICULO = '$name1', PRECIO = '$price1', FECHA='$date1', 
-                IMPORTADO = '$import1', PAIS_ORIGEN = '$country1' WHERE CODIGO_ARTICULO = '$data1'";
-                $db_host2 = "localhost";
-                $db_user2 = "root";
-                $db_pass2 = "";
-                $str_connect2 = mysqli_connect($db_host2, $db_user2, $db_pass2);
-                $result2 = mysqli_query($str_connect2, $query2);
-                if($result2){
-                    echo "Registros actualizados correctamente";
-                }
-            }
-    }
+        
+        //TODO: Implementar funcionalidad editable una vez recogidos los datos de la tabla
+        
     ?>
 </body>
 </html>
