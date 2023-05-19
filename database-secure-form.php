@@ -69,7 +69,7 @@
     </style>
 </head>
 <body>
-    <p class="instrucciones">Copiar la cadena de caracteres: ' OR '1' = '1 en los distintos campos, dejando las comillas como estan para ver diferencia, <span>funcionamiento normal poner datos existentes</span></p>
+    <p class="instrucciones">Copiar la cadena de caracteres: ' OR '1' = '1 en los distintos campos contraseña, dejando las comillas como estan para ver diferencia, <span>funcionamiento normal poner datos existentes</span></p>
     <div class="form1">
         <h2>Formulario sin seguridad</h2>
         <form method="POST">
