@@ -29,7 +29,7 @@
                 mysqli_select_db($str_connect, "ods_db") or die("No se ha encontrado la BBDD.");
             }
             
-            
+            mysqli_set_charset($str_connect, "UTF-8");
             $names = array("cod","secc","name","price","date","imp","country");
             $query = "SELECT * FROM HOJA1 WHERE CODIGO_ARTICULO ='$data'";
             $result = mysqli_query($str_connect, $query);

@@ -35,6 +35,7 @@
                         , NOMBRE_ARTICULO = '$name1', PRECIO = '$price1', FECHA='$date1', 
                         IMPORTADO = '$import1', PAIS_ORIGEN = '$country1' WHERE CODIGO_ARTICULO = '$data1'";
                         $result2 = mysqli_query($str_connect2, $query2);
+                        mysqli_set_charset($str_connect, "UTF-8");
                         if($result2){
                             echo "Datos acualizados";
                             $query3 = "SELECT * FROM HOJA1 WHERE CODIGO_ARTICULO = '$data1'";
