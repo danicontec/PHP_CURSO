@@ -6,17 +6,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        body{
+            background-color: gray;
+        }
         h1{
             text-align:center;
+            margin-bottom: 2px;
+            letter-spacing: -1.75px;
         }
 
         form {
             margin: auto;
             background-color: wheat;
+            text-align: center;
             border: 2px solid cyan;
             width: 30%;
         }
-
+        
         label, input{
             margin: 2px auto;
             text-align: center;
@@ -32,7 +38,19 @@
             text-align: center;
             font-weight: bolder;
         }
-    </style>
+        table{
+            margin:16px auto;
+            text-align: center;
+        }
+        table tr {
+            background-color: wheat;
+        }
+        
+        th,td{
+            border: 2px solid cyan;
+            padding: 0;
+        }
+        </style>
 </head>
 <body>
     <h1>Formulario de busqueda consultas preparadas</h1>
@@ -80,7 +98,7 @@
             else {
                 $okstmt = mysqli_stmt_bind_result($result, $cod, $sec, $name, $price, $date, $imp, $cntr);
                 
-                
+                //Opcion de contador dado que afected rows esta dando valor -1 quiazas en un futuro solucione esta linea
                 while(mysqli_stmt_fetch($result)){
                     if ($count == 0){
                         echo "<table><tr><th>Cod</th><th>Seccion</th><th>Nombe</th><th>Precio</th><th>Fecha</th><th>Importado</th><th>Pais</th></tr>";
@@ -90,6 +108,7 @@
                 }
                 echo "</table>";
                 mysqli_stmt_close($result);
+                mysqli_close($str_connect);
             }
         }
 
