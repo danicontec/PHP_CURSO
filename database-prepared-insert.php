@@ -97,6 +97,7 @@
                 echo "<p class='info'>No se ha ejecutado la consulta</p>";
             }
             else{
+                //En este caso al ser una consulta de insercion no hace falta la funcion de mysqli_stmt_result, porque no se recorre registros
                 echo "<p class='info'>Se han insertado los registros en la tabla.</p>";
             }
         }
