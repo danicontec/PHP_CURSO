@@ -53,9 +53,6 @@
             echo "</table></form>";
                        
         }
-
-        
-        //TODO: Implementar funcionalidad editable una vez recogidos los datos de la tabla
         
     ?>
 </body>

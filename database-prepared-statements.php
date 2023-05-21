@@ -38,10 +38,12 @@
             text-align: center;
             font-weight: bolder;
         }
+
         table{
             margin:16px auto;
             text-align: center;
         }
+        
         table tr {
             background-color: wheat;
         }
