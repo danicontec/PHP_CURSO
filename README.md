@@ -20,3 +20,10 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 - Si existe cualquier duda sobre los scripts puedes contactar conmigo, ya que pongo ejemplos personalizados en base a los ejemplos de este curso aplicando tambien conocimientos propios.
 
 **5.** Si te es util este repositorio, agradeceria que dejaras alguna estrella y compartieras con mas gente💥!!
+
+## Warnings
+
+**1.** Trabajando con XAMP y gestor de datos MySQL hay una curiosidad con importaciones usando la clase **PDO** de PHP. El puntero de insercion de datos se mantiene inmediatamente despues de haber insertado datos con un archivo en formato **Open Document**, por lo que las inserciones se hacen en la misma fila. 
+
+- Entorno: **Xamp 3.3.0, MySQL 8.0.31, PHP(8.1.13 , 8.2.0), Windows 10, Chrome 113.0.5672.127**
+
