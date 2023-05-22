@@ -79,9 +79,9 @@
         if(isset($_POST["send"])){
 
             $stmt -> execute(array(":cod"=>$_POST["codigo"], ":sec"=>$_POST["seccion"],
-                    ":nom"=>$_POST["nombre"], ":pre"=>$_POST["precio"], ":fec"=>$_POST["fecha"],
-                    ":imp"=>$_POST["importado"], ":pais"=>$_POST["pais"]));
-
+                    ":nom"=>$_POST["nombre"], ":pre"=>$_POST["precio"],
+                    ":fec"=>$_POST["fecha"], ":imp"=>$_POST["importado"],
+                    ":pais"=>$_POST["pais"]));
             
             if($stmt){
 

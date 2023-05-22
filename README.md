@@ -4,7 +4,13 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 ## Actualizaciones
 
 **1.** El curso esta actualizado a modo personal dados los siguientes aspectos:
+
 - El lenguaje PHP ha evolucionado a lo largo de los años y he tenido que actualizar metodos de realizar ciertas tareas.
+
+- La carpeta de objetos contiene las clases relacionadas entre si, el codigo ha sido cambiado en gran parte dado los cambios de las caracteristicas del lenguaje respecto a la salida del curso. Leer con atencion los comentarios👀.
+
+- Algunas anotaciones personales que no aparecen en el curso, van de la mano de mi conocimiento de POO, para mas detalles podeis visitar: [Objetos](https://profile.es/blog/que-es-la-programacion-orientada-a-objetos/), es una de tantas referencias, si aun asi no se entiende, recomiendo hacer un curso sobre el tema antes de abordar cualquier lenguaje que trabaje con objetos.
+
 - La partes visuales de CSS no estan relacionadas con el curso, son de conocimiento personal y no estan en todos los ejemplos, para mantener la logica de los codigos y el repaso de la manera mas clara posible.
 
 **2.** Es un curso de solamente PHP, las utilidades de Framework seran vistas en otro repositorio. 
