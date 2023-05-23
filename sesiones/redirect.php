@@ -7,16 +7,17 @@
     <title>Document</title>
 </head>
 <body>
-    <?php
-        session_start();
-    //Si no existe una sesion en esta variable global con estas caracteristicas, no se podra acceder
-        if(!isset($_SESSION["usuario"])){
-
-            header("Location: ./login-session.php");
-
-        }
-    ?>
     <p>Bienvenido Usuario</p>
-    <a href="./login-session.php"><button>Salir</button></a>
+    <form method = "POST" action="./out"><input type="submit" value="Salir"></form>
+    <?php
+    //Si no existe una sesion en esta variable global con estas caracteristicas, no se podra acceder
+        session_start();
+    if(!isset($_SESSION["usuario"])){
+        
+        header("Location: ./login-session.php");
+        
+    }
+
+    ?>
 </body>
 </html>
