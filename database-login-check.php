@@ -1,3 +1,7 @@
+<!-- En este archivo de PHP todas las caracteristicas funcionan, solo hay que 
+tratar los menajes del usuario de manera correcta en funcion del procedimiento
+almacenado que usa, capturando un parametro y tratando los mensajes por independiente-->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,7 +54,13 @@
             font-weight: bolder;
             color: green;
         }
-    </style>
+        
+        .err{
+            text-align: center;
+            font-weight: bolder;
+            color: red;
+        }
+        </style>
 </head>
 <body>
     <div class="form1">
@@ -64,6 +74,31 @@
         </form>
     </div>
 
+    <?php
+    require("database-data.php");
+    if(mysqli_error($str_connect)){
+        echo "Error en la conexion";
+        exit();
+    } else{
+        mysqli_select_db($str_connect,"sesiones");
+        mysqli_set_charset($str_connect, "UTF8");
+    }
+    if(isset($_POST["send"])){
+        
+        $usuario1 = mysqli_real_escape_string($str_connect, $_POST["usuario"]);
+        $password1 = mysqli_real_escape_string($str_connect,$_POST["password"]);
+        $sql = "SELECT * FROM USERDATA WHERE USUARIO ='$usuario1' AND CONTRASEÑA = '$password1'";
+        $result = mysqli_query($str_connect, $sql);
+    
+        if (mysqli_affected_rows($str_connect)>0){
+            echo "<p class='ok'>Usuario y contraseña correctos</p>";
+        } else{
+
+            echo "<p class='err'>Usuario o contraseña incorrectos</p>";
+        }
+    
+    }
+    ?>
     <div class="form2">
         <h2>Registro</h2>
         <form method="POST">
@@ -74,7 +109,7 @@
             <input type="submit" value="Registrar" name="send1">
         </form>
     </div>
-
+    
     <?php
         require("database-data.php");
         if(mysqli_error($str_connect)){
@@ -82,7 +117,7 @@
             exit();
         } else{
             mysqli_select_db($str_connect,"sesiones");
-            mysqli_set_charset($str_connect, "UTF-8");
+            mysqli_set_charset($str_connect, "UTF8");
         }
 
         if(isset($_POST["send1"])){
@@ -92,8 +127,8 @@
             $sql = "CALL InsertUserData('$usuario', '$password')";
             $result = mysqli_query($str_connect, $sql); 
             
-            //TODO: Corregir salida de usuario y de procedimiento almacenado
-
+            /* En caso de no tratar correctamente los parametros, se hara dos consultas por independiente como solucion.
+               Por el momento asi se queda porque el procedimiento almacenado funciona correctamente */
             if(mysqli_affected_rows($str_connect)>0){
                 echo "<p class='ok'>Registro insertado correctamente</p>";
             }
@@ -103,6 +138,7 @@
                 
             }
         }
+        
     ?>
     </body>
 </html>

@@ -33,3 +33,4 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 
 - Entorno: **Xamp 3.3.0, MySQL 8.0.31, PHP(8.1.13 , 8.2.0), Windows 10, Chrome 113.0.5672.127**
 
+**2.** En el apartado de **database-login-check** que está en la raíz, hay que remodelar el procedimiento almacenado o la manera de hacer las consultas para dar una respuesta acertada al usuario en función de la lógica que se quiera sacar. Ya que no redirige pero a la hora de insertar solo da una salida. En un futuro tocaré este tema, si antes se te ocurre algo y me quieres hacer un **pull request**, estaré encantado de revisarlo. Sino, en un futuro volveré a ello.
