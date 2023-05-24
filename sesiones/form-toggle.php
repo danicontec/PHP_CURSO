@@ -47,45 +47,35 @@
     </style>
 </head>
 <body>
-        <h2>Login</h2>
-        <form method="POST">
-            <label for="user">Usuario</label>
-            <input type="text" id="user" name="usuario">
-            <label for="pass">Contraseña</label>
-            <input type="password" id="pass" name="password">
-            <input type="submit" value="Entrar" name="send">
-        </form>
-
     <?php
+        
         try{
-
-            $init = new PDO("mysql:host=localhost;dbname=sesiones;charset=utf8mb4", "root", "");
-            $init->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            $query = "SELECT * FROM USERDATA WHERE USUARIO=:user AND CONTRASEÑA=:pass";
-            $result = $init->prepare($query);
+            $pdo = new PDO("mysql:host=localhost;dbname=sesiones;charset=utf8mb4", "root", "");
+            $pdo -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            $sql = "SELECT * FROM USERDATA WHERE USUARIO=:user AND CONTRASEÑA=:pass";
+            $stmt = $pdo -> prepare($sql);
             
             if(isset($_POST["send"])){
-                $result->execute(array(":user" => $_POST["usuario"], ":pass" => $_POST["password"]));
 
-                if($result -> rowCount() == 1){
-                    
-                    //Esta funcion inicia y mantiene sesiones, PHP detecta cuando ha sido iniciada segun usuario
+                $stmt -> execute(array(":user" => $_POST["usuario"], ":pass" => $_POST["password"]));
+                if($stmt -> rowCount()>0){
+                    echo "1";
                     session_start();
                     $_SESSION["usuario"] = $_POST["usuario"];
-                    header("Location: ./redirect");
-                    echo "Bienvenido";
-
-                }else{
-    
-                    echo "Usuario o contraseña incorrectos";
-    
-                }
+                    
+                } else {
+                    echo "No existe el usuario";
+                }   
             }
-
         } catch(Exception $e){
-
-            echo "Error: ". $e->getMessage();
-
+            echo "Error: " . $e -> getMessage();
+        }
+        if(!isset($_SESSION["usuario"])){
+            include("form-session.php");
+        }
+        else{
+            echo "<p>Bienvenido a la plataforma ".$_SESSION["usuario"]."</p>";
+            echo "<a href=./out2><button>Salir</button></a>";
         }
         
     ?>
