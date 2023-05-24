@@ -9,13 +9,19 @@
 <body>
     <?php
     print "Esta es mi primera pagina php <br/>"; 
-    print "Hola Dani esta es tu primera pagina <br/>" 
+    print "Hola Dani esta es tu primera pagina <br/>"; 
 
     // Esto es un comentario PHP
 
     /*Esto es un comentario
     multilinea
     en PHP*/
+
+
+    //Esta comprobacion de cookie es de la seccion de sesiones, (archivo cookies)
+    if($_COOKIE["prueba2"]){
+        echo "<p>El valor de la cookie es " . $_COOKIE["prueba2"] . "</p>";
+        }
     ?>
 </body>
 </html>

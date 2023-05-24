@@ -7,6 +7,7 @@
     <title>Document</title>
 </head>
 <body>
+    <!-- Este formulario redirecciona hacia su propia pagina -->
 <h2>Login</h2>
         <form method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
             <label for="user">Usuario</label>
