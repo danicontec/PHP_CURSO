@@ -19,7 +19,7 @@
 
 
     //Esta comprobacion de cookie es de la seccion de sesiones, (archivo cookies)
-    if($_COOKIE["prueba2"]){
+    if(isset($_COOKIE["prueba2"])){
         echo "<p>El valor de la cookie es " . $_COOKIE["prueba2"] . "</p>";
         }
     ?>
