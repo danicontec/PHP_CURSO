@@ -6,13 +6,19 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         h2{
             text-align: center;
             margin-bottom: 4px;
         }
 
         form{
-            margin: auto;
+            margin: 0 auto;
+            
             width: 400px;
             border: 2px solid gray;
             padding-bottom: 4px;

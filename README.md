@@ -25,7 +25,9 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 
 - Si existe cualquier duda sobre los scripts puedes contactar conmigo, ya que pongo ejemplos personalizados en base a los ejemplos de este curso aplicando también conocimientos propios.
 
-**5.** Si te es útil este repositorio, agradecería que dejaras alguna estrella y compartieras con mas gente💥!!
+**5.** Hay un simulacro de **sesiones** y **cookies** usando **objetos** en la subcarpeta dentro de la carpeta de **sesiones**, se mezcla conocimientos de las 3 cosas.
+
+**6.** Si te es útil este repositorio, agradecería que dejaras alguna estrella y compartieras con mas gente💥!!
 
 ## Warnings
 
