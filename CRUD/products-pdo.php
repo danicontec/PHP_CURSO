@@ -10,11 +10,14 @@ class ManageProducts extends GestionDatos {
         
         $sql = "SELECT * FROM productos";
         $execute = $this -> conexion ->prepare($sql);
-        $execute -> execute(array());
-        $result = $execute ->fetchAll(PDO::FETCH_ASSOC);
+        $result = $execute ->execute();
+
+        if($result){
+            $data = $execute ->fetchAll(PDO::FETCH_ASSOC);
+            $execute -> closeCursor();
+            return $data;
+        }
         
-        $execute -> closeCursor();
-        return $result;
     }
 
     public function deleteProduct($idProduct){
@@ -47,5 +50,17 @@ class ManageProducts extends GestionDatos {
         }
     }
 
+    public function updateProduct($id, $nombre, $categoria, $precio, $disponible){
+        $sql = "UPDATE FROM PRODUCTOS SET NOMBRE = :nombre, CATEGORIA = :categoria, PRECIO = :precio, DISPONIBLE = :estado WHERE ID = :id";
+        $execute = $this -> conexion ->prepare($sql);
+        $result = $execute -> execute(array(":nombre"=>$nombre, ":categoria"=>$categoria, ":precio"=>$precio, ":estado"=>$disponible, ":id"=>$id));
+    
+        if ($result){
+            echo "<p>Se ha actualizado el registro</p>";
+        }
+        else {
+            return $result;
+        }
+    }
 }
 ?>
