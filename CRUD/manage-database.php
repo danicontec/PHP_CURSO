@@ -24,7 +24,6 @@
         public function closeConexion(){
             
             return $this->conexion = null;
-            exit();
         }
 
     }

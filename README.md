@@ -27,7 +27,9 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 
 **5.** Hay un simulacro de **sesiones** y **cookies** usando **objetos** en la subcarpeta dentro de la carpeta de **sesiones**, se mezcla conocimientos de las 3 cosas.
 
-**6.** Si te es útil este repositorio, agradecería que dejaras alguna estrella y compartieras con mas gente💥!!
+**6.** En la carpeta de **CRUD**, hay un ejemplo donde se juntan tanto el manejo de archivos CRUD, como lógica aplicada y vista en el curso. Si hay dudas con el código ya que es diferente al tratado en el curso original, puedes contactar conmigo y te aclaro la lógica que he aplicado a mi ejemplo de CRUD. Espero que te sea de ayuda 😊.
+
+**7.** Si te es útil este repositorio, agradecería que dejaras alguna estrella y compartieras con mas gente💥!!
 
 ## Warnings
 
@@ -35,4 +37,6 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 
 - Entorno: **Xamp 3.3.0, MySQL 8.0.31, PHP(8.1.13 , 8.2.0), Windows 10, Chrome 113.0.5672.127**
 
-**2.** En el apartado de **database-login-check** que está en la raíz, hay que remodelar el procedimiento almacenado o la manera de hacer las consultas para dar una respuesta acertada al usuario en función de la lógica que se quiera sacar. Ya que no redirige pero a la hora de insertar solo da una salida. En un futuro tocaré este tema, si antes se te ocurre algo y me quieres hacer un **pull request**, estaré encantado de revisarlo. Sino, en un futuro volveré a ello.
+**2.** En el archivo de **database-login-check** que está en la raíz, hay que remodelar el procedimiento almacenado o la manera de hacer las consultas para dar una respuesta acertada al usuario en función de la lógica que se quiera sacar. Ya que no redirige pero a la hora de insertar solo da una salida. En un futuro tocaré este tema, si antes se te ocurre algo y me quieres hacer un **pull request**, estaré encantado de revisarlo. Sino, en un futuro volveré a ello.
+
+**3.** En directorio de **CRUD** al actualizar los registros de la tabla de productos, hace la tarea e imprime mensaje, pero no actualiza de manera inmediata la tabla. Se podría hacer por ejemplo con AJAX, pero a vistas de ser un curso de repaso y práctica no ensuciaré el codigo a no ser que sea estrictamente necesario. Si encuentro una funcion en PHP que no redirija el link, solamente actualice parte del HTML, la implementaré. Mientras tanto, se pueden comprobar los datos navegando con los botones.

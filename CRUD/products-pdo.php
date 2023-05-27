@@ -27,7 +27,7 @@ class ManageProducts extends GestionDatos {
         $result = $execute -> execute(array(":id"=>$idProduct));
 
         if ($result){
-            echo "<p>Se ha borrado el registro</p>";
+            echo "<p>Se ha borrado el registro con ID: $idProduct</p>";
         }
 
         else {
@@ -51,12 +51,12 @@ class ManageProducts extends GestionDatos {
     }
 
     public function updateProduct($id, $nombre, $categoria, $precio, $disponible){
-        $sql = "UPDATE FROM PRODUCTOS SET NOMBRE = :nombre, CATEGORIA = :categoria, PRECIO = :precio, DISPONIBLE = :estado WHERE ID = :id";
+        $sql = "UPDATE PRODUCTOS SET NOMBRE = :nombre, CATEGORIA = :categoria, PRECIO = :precio, DISPONIBLE = :estado WHERE ID = :id";
         $execute = $this -> conexion ->prepare($sql);
         $result = $execute -> execute(array(":nombre"=>$nombre, ":categoria"=>$categoria, ":precio"=>$precio, ":estado"=>$disponible, ":id"=>$id));
     
         if ($result){
-            echo "<p>Se ha actualizado el registro</p>";
+            echo "<p>Se ha actualizado el registro con ID: $id</p>";
         }
         else {
             return $result;
