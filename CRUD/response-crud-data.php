@@ -147,37 +147,41 @@
         $id = 0;
         $name = "";
         if(sizeof($data)>0){
-            echo "<form method='POST'><table><tr><th>ID</th><th>NOMBRE</th><th>CATEGORIA</th><th>PRECIO</th>
+            echo "<table><tr><th>ID</th><th>NOMBRE</th><th>CATEGORIA</th><th>PRECIO</th>
             <th>DISPONIBLE</th><th>Accion</th></tr>";
 
             foreach ($data as $valor) {
                 echo "<tr>";
                 foreach ($valor as $valor2) {
+                    $i++;
                     if($valor["ID"] == $valor2){
                         $id = $valor2;
                         echo "<td>". $valor2. "</td>";
-                    } else {
+                    } 
+                    else{
+
                         if($valor["NOMBRE"]==$valor2){
                             $name = "name";
                         }
+                        
                         if($valor["CATEGORIA"]==$valor2){
                             $name = "cate";
                         }
+                        
                         if($valor["PRECIO"]==$valor2){
                             $name = "pre";
                         }
+                        
                         if($valor["DISPONIBLE"]==$valor2){
                             $name = "disp";
                         }
-                        echo "<td><input type='text' name='$name' value='$valor2'></td>";
-                        
+                        echo "<form method='POST'><td><input type='text' name='$name' value='$valor2'></td>";
                     }
-                    
+                        
                 }
-                $i++;
                 echo "<td>
                 <input type='submit' name='upda$i' value='Actualizar'>
-                </td></tr></form>";
+                </td></form></tr>";
                 
                 if(isset($_POST["upda$i"])){
                     $idr = $id;
