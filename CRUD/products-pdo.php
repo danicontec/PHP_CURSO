@@ -62,5 +62,15 @@ class ManageProducts extends GestionDatos {
             return $result;
         }
     }
+
+    public function paginaProductos($inicio, $fin){
+        $sql = "SELECT * FROM PRODUCTOS LIMIT $inicio, $fin";
+        $execute = $this -> conexion ->prepare($sql);
+        $result = $execute -> execute(array());
+
+        if($result){
+            return $execute -> fetchAll(PDO::FETCH_ASSOC);
+        }
+    }
 }
 ?>
