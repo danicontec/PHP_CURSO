@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -76,9 +74,16 @@
     </form>
 
     <?php
+    session_start();
+    $regs = isset($_SESSION["regs"]) ? $_SESSION["regs"] : 0;
+    $pags = isset($_SESSION["pags"]) ? $_SESSION["pags"] : 0;
     require("products-pdo.php");
     $products = new ManageProducts();
-    if (isset($_GET['show'])) {
+
+    $paginas = 0;
+    $valor_inicial = 0;
+
+    if (isset($_GET["show"])) {
         $data = $products->showProducts();
 
         if (sizeof($data) > 0) {
@@ -94,7 +99,7 @@
         }
     }
 
-    if (isset($_GET['delete'])) {
+    if (isset($_GET["delete"])) {
         $data = $products->showProducts();
         $i = 0;
 
@@ -112,7 +117,7 @@
                         <input type='submit' value='Eliminar' name='delete".$i."'>
                     </form>
                 </td>";
-                if (isset($_POST['delete'.$i])) {
+                if (isset($_POST["delete$i"])) {
                     $productId = $_POST['productId'];
                     $products->deleteProduct($productId);
                 }
@@ -198,13 +203,10 @@
         }
 
     }
-
-    //Codigo de Paginacion, por terminar registros, captura de registros en funcion de la pagina
+//La paginacion y los registros se pasan por session.
     if(isset($_GET["pag"])){
         $total = $products ->showProducts();
         $total_reg = sizeof($total);
-        $valor_inicial = 0;
-        $paginas = 0;
         
         if($total_reg == 0){
             echo "<p>No se han encontrado registros</p>";
@@ -231,7 +233,10 @@
 
             if(isset($_POST["size"])){
                 $registros = $_POST["cantidad"];
+                $regs = $registros;
+                $_SESSION['regs'] = $regs;
                 $paginas = ceil($total_reg/$registros);
+                $_SESSION["pags"] = $paginas;
                 $table = $products ->paginaProductos($valor_inicial, $registros);
 
                 echo "<table><tr><th>ID</th><th>NOMBRE</th>
@@ -245,36 +250,62 @@
                     echo "</tr>";
                 }
                 echo "</table>";
-                echo "<div class='links'><form method='POST'>";
+                echo "<div class='links'>";
                 for($i=1;$i<=$paginas;$i++){
-                    echo "<input type='submit' name='pag$i' value='$i'>";
+                    echo "<a href='?num=$i'>$i</a>";
                 }
-                echo "</form></div>";
+                echo "</div>";
+                echo $regs;
 
-                if(isset($_POST["pag$i"])){
-                    header("Location: index");
-                    $pagina = $_POST["pag$i"];
-                    if($pagina == 1){
-                        $table = $products ->paginaProductos($valor_inicial, $registros);
-
-                echo "<table><tr><th>ID</th><th>NOMBRE</th>
-                <th>CATEGORIA</th><th>PRECIO</th>
-                <th>DISPONIBLE</th></tr>";
-                foreach($table as $valor){
-                    echo "<tr>";
-                    foreach($valor as $valorreg){
-                        echo "<td>$valorreg</td>";
-                    }
-                    echo "</tr>";
-                }
-                echo "</table>";
-                }
-
-
-                }
+                
             }
         }
     }
+
+    if(isset($_GET["num"])){
+        $valor_inicial = ($_GET["num"]-1)*$regs;
+        $table = $products ->paginaProductos($valor_inicial, $regs);
+        $total = sizeof($table);
+        $paginas = $pags;
+        
+        //-------- Codigo comentado por ser poco intuitivo, ademas no guarda el numero de paginas. Es poco funcional.
+        //-------- Solo descomentar para hacer pruebas visuales.
+
+        /* echo "<form method='POST' class='selection'>
+             <label>Mostrar:</label>
+                 <select name='canti'>
+                     <option value='2'>2</option>
+                     <option value='4'>4</option>
+                     <option value='6'>6</option>
+                     <option value='8'>8</option>
+                 </select>
+                 <input type='submit' value='enviar' name='size'>
+             </form>";
+             if(isset($_POST["size"])){
+                 $registros = $_POST["canti"];
+                 $regs = $registros;
+                 $_SESSION['regs'] = $regs;
+             } */
+
+        echo "<table><tr><th>ID</th><th>NOMBRE</th>
+        <th>CATEGORIA</th><th>PRECIO</th>
+        <th>DISPONIBLE</th></tr>";
+        
+        foreach($table as $valor){
+            echo "<tr>";
+            foreach($valor as $valorreg){
+                echo "<td>$valorreg</td>";
+                }
+                echo "</tr>";   
+                }
+                echo "</table>";
+                echo "<div class='links'>";
+                for($i=1;$i<=$paginas;$i++){
+                    echo "<a href='?num=$i'>$i</a>";
+                }
+                echo "</div>";
+    }
+    
     ?>
 </body>
 </html>

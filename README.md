@@ -41,4 +41,6 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 
 **3.** En directorio de **CRUD** al actualizar los registros de la tabla de productos, hace la tarea e imprime mensaje, pero no actualiza de manera inmediata la tabla. Se podría hacer por ejemplo con AJAX, pero a vistas de ser un curso de repaso y práctica no ensuciaré el codigo a no ser que sea estrictamente necesario. Si encuentro una funcion en PHP que no redirija el link, solamente actualice parte del HTML, la implementaré. Mientras tanto, se pueden comprobar los datos navegando con los botones.
 
-**4.** La paginacion del archivo de CRUD por alguna razon no esta pillando el GET, en breves lo mirare y cuando este arreglado editare este punto. Si encuentras una solcion en base al codigo antes que yo espero tu pull request 💪🏽. 
+**4.** ~~La paginacion del archivo de CRUD por alguna razon no esta pillando el GET, en breves lo mirare y cuando este arreglado editare este punto. Si encuentras una solcion en base al codigo antes que yo espero tu pull request 💪🏽.~~
+
+-Solucionado: Se pasa los valores de las paginas y los registros por sesion para no dar conflicto con los envios del formulario. El select desaparece una vez cambiada la página, hay otro select comentado en el código ya que los valores cambian solo al cambiar de página, y es mas intuitivo darle al boton de paginación de nuevo.
