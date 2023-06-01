@@ -29,7 +29,9 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 
 **6.** En la carpeta de **CRUD**, hay un ejemplo donde se juntan tanto el manejo de archivos CRUD, como lógica aplicada y vista en el curso. Si hay dudas con el código ya que es diferente al tratado en el curso original, puedes contactar conmigo y te aclaro la lógica que he aplicado a mi ejemplo de CRUD. Espero que te sea de ayuda 😊.
 
-**7.** Si te es útil este repositorio, agradecería que dejaras alguna estrella y compartieras con mas gente💥!!
+**7.** En la carpeta de MVC no es exactamente teoria de PHP como tal, es aplicación de un patrón de diseño. El código es muy parecido y se usa **CRUD** para acceder a estos datos. Para más información sobre esto puedes visitar: [Patrones de diseño](https://refactoring.guru/es/design-patterns/what-is-pattern). Tampoco se ha puesto hincapié en el **CSS**, para ver el código de la manera más clara posible. Para practicar esa parte en base al proyecto en PHP, se puede observar lo realizado en el aparado de **CRUD** y basarse en ello. ¡Atrévete a ponerle tus propios estilos, solo aprenderás practicando 🚀!
+
+**8.** Si te es útil este repositorio, agradecería que dejaras alguna estrella y compartieras con mas gente💥!!
 
 ## Warnings
 

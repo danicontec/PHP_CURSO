@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
-    
+    <h1>MODELO VISTA CONTROLADOR</h1>
+    <?php
+        require_once("CONTROLLER/controlador.php");
+    ?>
 </body>
 </html>
