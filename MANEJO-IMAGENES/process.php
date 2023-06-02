@@ -20,11 +20,21 @@
         mkdir($send_directory, 0777, true);
     } 
 
-    if(file_exists($send_directory)){
+    if($size_img <=1000000){
 
-        //Este método mueve la imagen subida del directorio temporal a la ruta especificada
-        move_uploaded_file($_FILES["imagen"]["tmp_name"], $send_directory . $img_name);
-        echo "Archivo subido al servidor";
+        if($type_img == "image/jpeg" || $type_img == "img/jpg" || $type_img == "image/png" || $type_img =="img/gif"){
+
+        if(file_exists($send_directory)){
+    
+            //Este método mueve la imagen subida del directorio temporal a la ruta especificada
+            move_uploaded_file($_FILES["imagen"]["tmp_name"], $send_directory . $img_name);
+            echo "Archivo subido al servidor <a href='./formulario-subida'><button>Volver</button></a>";
+        }
+    }else{
+        echo "El archivo seleccionado no es una imagen <a href='./formulario-subida'><button>Volver</button></a>";
+    }
+    } else{
+        echo "La imagen excede el tamaño <a href='./formulario-subida'><button>Volver</button></a>";
     }
 
     
