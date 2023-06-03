@@ -108,6 +108,9 @@
                 if (move_uploaded_file($tmp_name, $name)) {
                     $contenido = file_get_contents($name);
                     $images->insertImageProduct($_POST["name"], $_POST["tipo"], $contenido);
+                    if(file_exists($name)){
+                        unlink($name);
+                    }
                     echo "<p>Archivo subido correctamente.</p>";
                 } else {
                     echo "<p>Ocurrió un error al subir el archivo.</p>";
