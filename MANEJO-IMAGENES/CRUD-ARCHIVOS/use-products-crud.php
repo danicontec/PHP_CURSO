@@ -127,7 +127,13 @@
                 foreach ($data as $valor) {
                     echo "<tr>";
                     foreach ($valor as $valor2) {
-                        echo "<td>" . $valor2 . "</td>";
+                        echo "<td>";
+                        if(strlen($valor2) > 25) {
+                            $shortenedValue = substr($valor2, 0, 25) . "...";
+                            echo "<span>$shortenedValue</span>";
+                        } else {
+                            echo $valor2;
+                        } echo "</td>";
                     }
                     $i++;
                     echo "<td>
