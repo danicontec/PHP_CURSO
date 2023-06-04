@@ -1,6 +1,10 @@
 # PHP_CURSO
 Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](https://www.pildorasinformaticas.es/course/php-mysql/)
 
+Mi práctica del curso fue terminada el 4 de Junio de 2023, actualizando el código respecto a la API de **PHP**, y utilizando otra manera de hacer las cosas. Puedes usarlo como referencia pero te recomiendo que en base a esta referencia busques tu manera y lógica de hacer las cosas basandote en el material de [Pildoras Informaticas](https://www.pildorasinformaticas.es/course/php-mysql/). Están todas las prácticas hechas y comentadas, usando nombres intuitivos para encontrarlas mejor y divididas las secciones mas complicadas por carpetas. **Si encuentras errores o tienes cualquier sugerencia a cambios mandame un pull request o contacta conmigo, lo revisaré lo antes posible**.
+
+Para continuar con mas prácticas con framework puedes basarte en: [Repositorio Laravel](https://github.com/danicontec/LARAVEL_CURSO).
+
 ## Actualizaciones
 
 **1.** El curso esta actualizado a modo personal dados los siguientes aspectos:
@@ -15,7 +19,7 @@ Practicas hechas en lenguaje PHP de curso pildoras informaticas: [Curso PHP](htt
 
 **2.** Es un curso de solamente PHP, las utilidades de Framework seran vistas en otro repositorio. 
 
-- Se actualizará en este apartado el link llegado el momento.
+- ~~ Se actualizará en este apartado el link llegado el momento.~~ [Repositorio Laravel](https://github.com/danicontec/LARAVEL_CURSO).
 
 **3.** Este repositorio está adaptado solo para logiga de PHP, no tiene otro fin. Así me es mas fácil apreciar las diferencias con mis conocimientos de otros lenguajes a traves de comentarios personales.
 
