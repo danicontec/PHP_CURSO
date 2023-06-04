@@ -19,7 +19,7 @@ Para continuar con mas prácticas con framework puedes basarte en: [Repositorio 
 
 **2.** Es un curso de solamente PHP, las utilidades de Framework seran vistas en otro repositorio. 
 
-- ~~ Se actualizará en este apartado el link llegado el momento.~~ [Repositorio Laravel](https://github.com/danicontec/LARAVEL_CURSO).
+- ~~Se actualizará en este apartado el link llegado el momento.~~ [Repositorio Laravel](https://github.com/danicontec/LARAVEL_CURSO).
 
 **3.** Este repositorio está adaptado solo para logiga de PHP, no tiene otro fin. Así me es mas fácil apreciar las diferencias con mis conocimientos de otros lenguajes a traves de comentarios personales.
 
